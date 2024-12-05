@@ -1,1 +1,10 @@
 theme: jekyll-theme-slate
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Error Handling: error_handling.md
+  - Views & ViewSets: views_viewsets.md
+  - API Reference: api_reference.md
+  - Changelog: changelog.md
