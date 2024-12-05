@@ -1,0 +1,37 @@
+site_name: django-success-response Documentation
+site_url: http://django-success-response.moorfo.uz/
+site_description: Standardized success and error response handling for Django REST Framework.
+author: Quvonchbek Bobojonov
+version: 1.0.0
+
+# Navigation (adjust this to match your file structure)
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Error Handling: error_handling.md
+  - Views & ViewSets: views_viewsets.md
+  - API Reference: api_reference.md
+  - Changelog: changelog.md
+
+# Theme settings
+theme: readthedocs
+
+# Extra settings (optional)
+extra:
+  author: "Quvonchbek Bobojonov"
+  contact_email: "contact@moorfo.uz"
+  github: "https://github.com/QuvonchbekBobojonov/django-success-response"
+
+# Markdown extensions
+markdown_extensions:
+  - toc:  # Table of contents in each page
+      permalink: true
+  - codehilite:
+      guess_lang: false
+  - admonition
+  - def_list
+
+# Plugins (optional)
+plugins:
+  - search  # Enable the search functionality
