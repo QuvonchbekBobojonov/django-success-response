@@ -1,23 +1,18 @@
 version: 2
 
-# Project-specific information
+# Define the build image
 build:
-  image: "ubuntu-20.04"  # Use an Ubuntu image for building
-  tools:
-    python: "3.9"  # Python version
+  image: "ubuntu-20.04"  # Correct image name, no need for an `os` field
 
-# Define which directory to use as the source of your docs
-sphinx:
-  configuration: docs/conf.py  # Path to your Sphinx conf.py file (if using Sphinx)
-
+# Define the documentation builder
 mkdocs:
   configuration: mkdocs.yml  # Path to your MkDocs configuration file
   clean: true  # Clean the site directory before building
 
-# Additional build steps if needed (e.g., installing dependencies)
+# Install dependencies (optional, if you have a requirements.txt)
 install:
-  - requirements: "requirements.txt"  # Install dependencies from requirements.txt
+  - requirements: "requirements.txt"
 
-# Define the default branch to build from
+# Define the branches to be built
 branches:
   - main  # Replace with your default branch name if different
