@@ -1,15 +1,15 @@
 from rest_framework.pagination import PageNumberPagination
-from .response import SaccessResponse
+from .response import SuccessResponse
 
 
 # Custom pagination class extending PageNumberPagination to return paginated data
-# in a consistent format using SaccessResponse.
-class SaccessPageNumberPagination(PageNumberPagination):
+# in a consistent format using SuccessResponse.
+class SuccessPageNumberPagination(PageNumberPagination):
 
     # Override the method that generates the paginated response.
     def get_paginated_response(self, data):
-        # Use SaccessResponse to wrap the paginated data and include pagination details.
-        return SaccessResponse({
+        # Use SuccessResponse to wrap the paginated data and include pagination details.
+        return SuccessResponse({
             'count': self.page.paginator.count,  # Total number of items.
             'total_pages': self.page.paginator.num_pages,  # Total number of pages.
             'current_page': self.page.number,  # Current page number.

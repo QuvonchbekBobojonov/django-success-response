@@ -3,12 +3,12 @@ from rest_framework import status as drf_status
 
 
 # Custom response class that standardizes API responses with an additional
-# 'saccess' field, indicating success or failure, and a 'result' field holding the actual data.
-class SaccessResponse(Response):
-    def __init__(self, data=None, headers=None, exception=False, content_type=None, saccess=True):
-        # Wrap the data in a standardized format with 'saccess' indicating success status,
+# 'success' field, indicating success or failure, and a 'result' field holding the actual data.
+class SuccessResponse(Response):
+    def __init__(self, data=None, headers=None, exception=False, content_type=None, success=True):
+        # Wrap the data in a standardized format with 'success' indicating success status,
         # and 'result' containing the response payload.
-        data = {'saccess': saccess, 'result': data}
+        data = {'success': success, 'result': data}
 
         # Default the status code to 200 (OK) unless otherwise specified.
         status = drf_status.HTTP_200_OK

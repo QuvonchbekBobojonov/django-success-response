@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="django-saccess-response",
-    version="1.0.4.1",
+    name="django-success-response",
+    version="1.0.0",
     description="Django app for customizing response",
     author="Quvonchbek Bobojonov",
     author_email="hi@moorfo.uz",

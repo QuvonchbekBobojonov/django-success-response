@@ -1,23 +1,23 @@
-# Django Saccess Response
+# Django Success Response
 
-`django-saccess-response` is a Django REST Framework extension that provides a standardized success response format for API views. It simplifies handling both successful and error responses with customizable data structures.
+`django-success-response` is a Django REST Framework extension that provides a standardized success response format for API views. It simplifies handling both successful and error responses with customizable data structures.
 
 ## Installation
 
 Install the package via pip:
 
 ```bash
-pip install django-saccess-response
+pip install django-success-response
 ```
 
 ## Usage
 
-In your Django views, use `SaccessResponse` to wrap the response data.
+In your Django views, use `SuccessResponse` to wrap the response data.
 
 ### Example: Standard Success Response
 
 ```python
-from saccess_response.response import SaccessResponse
+from success_response.response import SuccessResponse
 from rest_framework.views import APIView
 
 
@@ -25,14 +25,14 @@ class MyView(APIView):
     @staticmethod
     def get(request):
         data = {'key': 'value'}
-        return SaccessResponse(data)
+        return SuccessResponse(data)
 ```
 
 ### Result:
 
 ```json
 {
-    "saccess": true,
+    "success": true,
     "result": {
         "key": "value"
     }
@@ -41,10 +41,10 @@ class MyView(APIView):
 
 ### Example: Error Response
 
-To handle errors, pass `saccess=False`:
+To handle errors, pass `success=False`:
 
 ```python
-from saccess_response.response import SaccessResponse
+from success_response.response import SuccessResponse
 from rest_framework.views import APIView
 
 
@@ -52,14 +52,14 @@ class MyView(APIView):
     @staticmethod
     def get(request):
         data = {'key': 'value'}
-        return SaccessResponse(data, saccess=False)
+        return SuccessResponse(data, success=False)
 ```
 
 ### Result:
 
 ```json
 {
-    "saccess": false,
+    "success": false,
     "result": {
         "detail": "error"
     }
@@ -72,31 +72,27 @@ You can also customize Django REST Framework's error responses globally by modif
 
 ```python
 REST_FRAMEWORK = {
-    'EXCEPTION_HANDLER': 'saccess_response.views.saccess_exception_handler'
+    'EXCEPTION_HANDLER': 'success_response.views.success_exception_handler'
 }
 ```
 
-This will format all exceptions using the `SaccessResponse` structure.
+This will format all exceptions using the `SuccessResponse` structure.
 
 ## Generic Views and ViewSets
 
 This package also provides customized DRF generic views and viewsets for standardized response handling.
 
-| Standard View                  | Saccess Equivalent                    |
+| Standard View                  | Success Equivalent                     |
 |--------------------------------|---------------------------------------|
-| `CreateAPIView`                | `SaccessCreateAPIView`                |
-| `RetrieveAPIView`              | `SaccessRetrieveAPIView`              |
-| `UpdateAPIView`                | `SaccessUpdateAPIView`                |
-| `DestroyAPIView`               | `SaccessDestroyAPIView`               |
-| `ListAPIView`                  | `SaccessListAPIView`                  |
-| `RetrieveUpdateAPIView`        | `SaccessRetrieveUpdateAPIView`        |
-| `RetrieveDestroyAPIView`       | `SaccessRetrieveDestroyAPIView`       |
-| `RetrieveUpdateDestroyAPIView` | `SaccessRetrieveUpdateDestroyAPIView` |
-| `ModelViewSet`                 | `SaccessModelViewSet`                 |
-| `ReadOnlyModelViewSet`         | `SaccessReadOnlyModelViewSet`         |
+| `CreateAPIView`                | `SuccessCreateAPIView`                |
+| `RetrieveAPIView`              | `SuccessRetrieveAPIView`              |
+| `UpdateAPIView`                | `SuccessUpdateAPIView`                |
+| `DestroyAPIView`               | `SuccessDestroyAPIView`               |
+| `ListAPIView`                  | `SuccessListAPIView`                  |
+| `RetrieveUpdateAPIView`        | `SuccessRetrieveUpdateAPIView`        |
+| `RetrieveDestroyAPIView`       | `SuccessRetrieveDestroyAPIView`       |
+| `RetrieveUpdateDestroyAPIView` | `SuccessRetrieveUpdateDestroyAPIView` |
+| `ModelViewSet`                 | `SuccessModelViewSet`                 |
+| `ReadOnlyModelViewSet`         | `SuccessReadOnlyModelViewSet`         |
 
-These classes behave like their DRF counterparts but automatically format responses using `SaccessResponse`.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+These classes behave like their DRF counterparts but automatically format responses using `SuccessResponse`.
