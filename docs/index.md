@@ -105,7 +105,7 @@ This will ensure that all exceptions in your DRF views are formatted consistentl
 
 `django-success-response` also provides customized versions of DRF's generic views and viewsets. These views automatically return responses in the `SuccessResponse` format, saving you time and effort.
 
-| Standard View                  | Success Equivalent                     |
+| Standard View                   | Success Equivalent                     |
 |---------------------------------|----------------------------------------|
 | `CreateAPIView`                 | `SuccessCreateAPIView`                 |
 | `RetrieveAPIView`               | `SuccessRetrieveAPIView`               |
