@@ -23,8 +23,8 @@ nav:
 # Configure theme
 theme:
   name: "jekyll-theme-cayman"
-  remote_theme: "pages-themes/cayman@v0.2.0"
-  repo: "your-username/django-success-response"
+  remote_theme: pages-themes/minimal@v0.2.0
+  repo: "QuvonchbekBobojonov/django-success-response"
   color_scheme: "light"
   font: "Arial, sans-serif"
 
@@ -44,8 +44,7 @@ contact_email: "contact@moorfo.uz"
 
 # Plugin settings (if any)
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+- jekyll-remote-theme
 
 # Markdown options
 markdown_ext: .md
