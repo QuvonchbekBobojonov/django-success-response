@@ -1,6 +1,8 @@
 # Django Success Response
 
-`django-success-response` is a Django REST Framework extension that provides a standardized success response format for API views. It simplifies handling both successful and error responses with customizable data structures.
+`django-success-response` is a Django REST Framework extension that standardizes success and error response formats in API views. It simplifies response handling by providing a consistent structure and offers easy customization for data formats.
+
+Official Docs: [django-success-response.moorfo.uz](http://django-success-response.moorfo.uz/)
 
 ## Installation
 
@@ -12,14 +14,15 @@ pip install django-success-response
 
 ## Usage
 
-In your Django views, use `SuccessResponse` to wrap the response data.
+### Standard Success Response
 
-### Example: Standard Success Response
+To return a standard success response, use `SuccessResponse` in your Django views.
+
+#### Example:
 
 ```python
 from success_response.response import SuccessResponse
 from rest_framework.views import APIView
-
 
 class MyView(APIView):
     @staticmethod
@@ -28,7 +31,7 @@ class MyView(APIView):
         return SuccessResponse(data)
 ```
 
-### Result:
+#### Response:
 
 ```json
 {
@@ -39,23 +42,24 @@ class MyView(APIView):
 }
 ```
 
-### Example: Error Response
+### Error Response
 
-To handle errors, pass `success=False`:
+For error responses, set `success=False` and provide an error message.
+
+#### Example:
 
 ```python
 from success_response.response import SuccessResponse
 from rest_framework.views import APIView
 
-
 class MyView(APIView):
     @staticmethod
     def get(request):
-        data = {'key': 'value'}
+        data = {'detail': 'error'}
         return SuccessResponse(data, success=False)
 ```
 
-### Result:
+#### Response:
 
 ```json
 {
@@ -68,7 +72,7 @@ class MyView(APIView):
 
 ## Error Handling
 
-You can also customize Django REST Framework's error responses globally by modifying the `EXCEPTION_HANDLER` setting in your `settings.py`:
+To format all error responses using the `SuccessResponse` structure, configure the `EXCEPTION_HANDLER` in your `settings.py`:
 
 ```python
 REST_FRAMEWORK = {
@@ -76,23 +80,23 @@ REST_FRAMEWORK = {
 }
 ```
 
-This will format all exceptions using the `SuccessResponse` structure.
-
 ## Generic Views and ViewSets
 
-This package also provides customized DRF generic views and viewsets for standardized response handling.
+`django-success-response` provides customized DRF generic views and viewsets that automatically return responses in the `SuccessResponse` format.
+
+### Available Views and ViewSets:
 
 | Standard View                  | Success Equivalent                     |
-|--------------------------------|---------------------------------------|
-| `CreateAPIView`                | `SuccessCreateAPIView`                |
-| `RetrieveAPIView`              | `SuccessRetrieveAPIView`              |
-| `UpdateAPIView`                | `SuccessUpdateAPIView`                |
-| `DestroyAPIView`               | `SuccessDestroyAPIView`               |
-| `ListAPIView`                  | `SuccessListAPIView`                  |
-| `RetrieveUpdateAPIView`        | `SuccessRetrieveUpdateAPIView`        |
-| `RetrieveDestroyAPIView`       | `SuccessRetrieveDestroyAPIView`       |
-| `RetrieveUpdateDestroyAPIView` | `SuccessRetrieveUpdateDestroyAPIView` |
-| `ModelViewSet`                 | `SuccessModelViewSet`                 |
-| `ReadOnlyModelViewSet`         | `SuccessReadOnlyModelViewSet`         |
+|---------------------------------|----------------------------------------|
+| `CreateAPIView`                 | `SuccessCreateAPIView`                 |
+| `RetrieveAPIView`               | `SuccessRetrieveAPIView`               |
+| `UpdateAPIView`                 | `SuccessUpdateAPIView`                 |
+| `DestroyAPIView`                | `SuccessDestroyAPIView`                |
+| `ListAPIView`                   | `SuccessListAPIView`                   |
+| `RetrieveUpdateAPIView`         | `SuccessRetrieveUpdateAPIView`         |
+| `RetrieveDestroyAPIView`        | `SuccessRetrieveDestroyAPIView`        |
+| `RetrieveUpdateDestroyAPIView`  | `SuccessRetrieveUpdateDestroyAPIView`  |
+| `ModelViewSet`                  | `SuccessModelViewSet`                  |
+| `ReadOnlyModelViewSet`          | `SuccessReadOnlyModelViewSet`          |
 
-These classes behave like their DRF counterparts but automatically format responses using `SuccessResponse`.
+These views behave like their DRF counterparts but automatically format responses using `SuccessResponse`.
