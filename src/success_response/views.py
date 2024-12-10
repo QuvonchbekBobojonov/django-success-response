@@ -19,7 +19,7 @@ def success_exception_handler(exc, context):
         # Ensure the response data is a dictionary for consistent formatting.
         if not isinstance(data, dict):
             # Extract the first error message if the data isn't already a dictionary.
-            data = {'detail': str(data)}
+            data = {'detail': ''.join(i for i in data)}
 
         # Wrap the error response in a standardized format.
         response = SuccessResponse(data, success=False)
