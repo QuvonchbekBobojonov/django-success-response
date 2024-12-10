@@ -6,7 +6,7 @@ setup(
     description="Django app for customizing response",
     author="Quvonchbek Bobojonov",
     author_email="hi@moorfo.uz",
-    url="https://github.com/QuvonchbekBobojonov/saccess_response",
+    url="https://github.com/QuvonchbekBobojonov/django-success-response",
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
     long_description=open("README.md").read(),
