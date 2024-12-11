@@ -30,25 +30,16 @@ class SuccessTokenViewBase(TokenViewBase):
 # Custom class for obtaining JWT access and refresh tokens
 class SuccessTokenObtainPairView(SuccessTokenViewBase, TokenObtainPairView):
     """Override TokenObtainPairView to wrap the response in SuccessResponse."""
-
-    def post(self, request, *args, **kwargs):
-        response = super().post(request, *args, **kwargs)
-        return SuccessResponse(response.data)
+    pass
 
 
 # Custom class for refreshing JWT access tokens
 class SuccessTokenRefreshView(SuccessTokenViewBase, TokenRefreshView):
     """Override TokenRefreshView to wrap the response in SuccessResponse."""
-
-    def post(self, request, *args, **kwargs):
-        response = super().post(request, *args, **kwargs)
-        return SuccessResponse(response.data)
+    pass
 
 
 # Custom class for verifying JWT tokens
 class SuccessTokenVerifyView(SuccessTokenViewBase, TokenVerifyView):
     """Override TokenVerifyView to wrap the response in SuccessResponse."""
-
-    def post(self, request, *args, **kwargs):
-        response = super().post(request, *args, **kwargs)
-        return SuccessResponse(response.data)
+    pass
