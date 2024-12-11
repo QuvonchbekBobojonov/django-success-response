@@ -17,6 +17,6 @@ upload:
 
 # Clean build artifacts
 clean:
-	rm -rf build/ dist/ your_package.egg-info/
+	rm -rf build/ dist/ src/django_success_response.egg-info/
 
 .PHONY: venv install test build upload clean
