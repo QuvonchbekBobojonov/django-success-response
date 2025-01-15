@@ -4,9 +4,10 @@
 
 The following versions of the `django-success-response` package are actively supported with security updates:
 
-| Version  | Supported          |
-| -------- | ------------------ |
-| 1.0.0    | :white_check_mark: |
+| Version | Supported          |
+|---------| ------------------ |
+| 1.0.5   | :white_check_mark: |
+| 1.1.0   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
