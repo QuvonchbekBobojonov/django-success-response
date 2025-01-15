@@ -55,7 +55,7 @@ from rest_framework.views import APIView
 class MyView(APIView):
     @staticmethod
     def get(request):
-        data = {'detail': 'error'}
+        data = {'message': 'error'}
         return SuccessResponse(data, success=False)
 ```
 
@@ -64,8 +64,8 @@ class MyView(APIView):
 ```json
 {
     "success": false,
-    "result": {
-        "detail": "error"
+    "error": {
+        "message": "error"
     }
 }
 ```

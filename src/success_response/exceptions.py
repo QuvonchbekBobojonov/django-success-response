@@ -19,7 +19,10 @@ class SuccessValidationError(ValidationError):
         :param success: Optional flag to indicate success (default: False).
         """
         # Customize the detail structure to include the 'success' key along with the error result.
-        detail = {'success': success, 'result': detail}
+        detail = {'success': success, 'error': {
+            'code': code,
+            'message': detail,
+        }}
 
         # Call the parent constructor with the custom detail structure.
-        super().__init__(detail, code)
+        super().__init__(detail, drf_status.HTTP_200_OK)

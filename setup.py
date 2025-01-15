@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-success-response",
-    version="1.0.5",
+    version="1.1.0",
     description="Django app for customizing response",
     author="Quvonchbek Bobojonov",
     author_email="hi@moorfo.uz",
