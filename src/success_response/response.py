@@ -12,7 +12,7 @@ class SuccessResponse(Response):
             data = {'success': success, 'result': data}
         else:
             data = {'success': success, 'error': {
-                'code': status
+                'code': status,
                 **data
             }}
 

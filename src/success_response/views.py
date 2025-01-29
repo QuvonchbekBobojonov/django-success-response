@@ -29,6 +29,9 @@ def success_exception_handler(exc, context):
                 )
             }
 
+        if response.status_code == status.HTTP_401_UNAUTHORIZED:
+            data['code'] = status.HTTP_401_UNAUTHORIZED
+
         # Wrap the error response in a standardized format using SuccessResponse.
         response = SuccessResponse(
             data,
