@@ -8,7 +8,7 @@ The following versions of the `django-success-response` package are actively sup
 |---------| ------------------ |
 | 1.0.5   | :white_check_mark: |
 | 1.1.0   | :x:                |
-| 1.1.0   | :white_check_mark: |
+| 1.1.1   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
